@@ -1,0 +1,15 @@
+// Testing Logos++
+
+@interface MusicInformativeView : UIView
+@property (nonatomic, assign) NSString *title;
+@end
+
+
+
+%hookswift Music.InformativeView
+- (void)layoutSubviews 
+{
+	%orig;
+	((MusicInformativeView*)self).title = @"hooked!";
+} 
+%end

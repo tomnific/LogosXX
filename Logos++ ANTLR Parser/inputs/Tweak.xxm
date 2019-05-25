@@ -1,0 +1,35 @@
+
+
+
+%hookswift AppName.ClassName // hook swift class
+
+/*
+Hook swift function
+1) AppName.ClassName
+2) return type
+3) Mangled Name
+4) parameter list
+*/
+%hookswiftf(@"AppName.ClassName", void, @"MANGLED_NAME", int a)
+{
+    printf("Hello");
+
+    return %orig;
+}
+
+- (id)initWithFrame:(CGRect)frame
+{
+    /*
+    Call swift function:
+    1) return type
+    2) AppName.ClassName.FunctioName
+    3) (parameter types)
+    4) (parameters to pass)
+    */
+    %callswift(void, "App.Class.Function", (int, int), (3, 4));
+
+
+    return CGRectMake(frame.origin.x, (int) frame.origin.y + 20, frame.size.width, frame.size.height);
+}
+
+%end
