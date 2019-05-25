@@ -52,7 +52,7 @@ Compile the translator yourself, or use the provided executable like so:
 java -jar logos--.jar <path-to-tweak-file>
 ```
 
-Then take the output (`HLP-Tweak.xm`)and do everything you'd normally do to compile your tweak.
+Then take the output (`HLP-Tweak.xm` (or `LLP-Tweak.xm` if the high-level pass wasn't needed)) and do everything you'd normally do to compile your tweak.
 
 <br>
 
