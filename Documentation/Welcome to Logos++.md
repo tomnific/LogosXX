@@ -1,5 +1,5 @@
 # Welcome to Logos++
->This language is currently in beta, and subject to syntax changes
+>This language is currently in beta, and subject to syntax changes (in fact there will be changes based on user feedback)
 
 Logos++ is superset of Logos, which is a preprocessor language used by jailbreak tweaks to simplify the process of hooking classes. It accomplishes this by translating simple directives into more complex Objective-C++ code.
 
@@ -52,6 +52,7 @@ Not very pretty, is it?
 Now, here's that same function hooked with Logos++
 
 ```logosxx
+//           AppName.FunctionName        return type    mangled function name                                  variables
 %hookswiftf("HookExampleApp.ViewController", void, "__T014HookExampleApp14ViewControllerC14randomFunctionyyF", void)
 {
 	%orig;
